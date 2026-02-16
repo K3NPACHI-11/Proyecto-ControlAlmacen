@@ -119,7 +119,6 @@ namespace ProyectoAlmacen
         {
             Console.WriteLine("Nuevo producto alimenticio: ");
 
-
             int id = LeerEntero("ID: ");
             Console.Write("Nombre: ");
             string nombre = Console.ReadLine();
@@ -132,6 +131,26 @@ namespace ProyectoAlmacen
             inventario.AgregarProducto(p);
 
             Console.WriteLine("Producto alimenticio agregado correctamente.");
+        }
+
+        static void EliminarProducto()
+        {
+            Console.WriteLine("Eliminar producto: ");
+
+            int id = LeerEntero("ID a eliminar");
+
+            Console.Write("¿Seguro? (s/n): ");
+            string confirm = Console.ReadLine().ToLower();
+
+            if (confirm == "S")
+            {
+                inventario.EliminarProducto(id);
+                Console.WriteLine("EL producto se ha eliminado correctamente";
+            }
+            else
+            {
+                Console.WriteLine("Cancelado");
+            }
         }
     }
 }
