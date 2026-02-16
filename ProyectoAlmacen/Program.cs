@@ -96,5 +96,42 @@ namespace ProyectoAlmacen
 
             return fecha;
         }
+
+        static void AgregarElectronico()
+        {
+            Console.WriteLine("Nuevo producto electrónico: ");
+
+            int id = LeerEntero("ID: ");
+            Console.Write("Nombre: ");
+            string nombre = Console.ReadLine();
+
+            int cantidad = LeerEntero("Cantidad: ");
+            decimal precio = LeerDecimal("Precio: ");
+            int garantia = LeerEntero("Garantía (meses): ");
+
+            ProductoElectronico p = new ProductoElectronico(id, nombre, cantidad, precio, garantia);
+            inventario.AgregarProducto(p);
+
+            Console.WriteLine("Producto electrónico agregado correctamente.");
+        } 
+
+        static void AgregarAlimenticio()
+        {
+            Console.WriteLine("Nuevo producto alimenticio: ");
+
+
+            int id = LeerEntero("ID: ");
+            Console.Write("Nombre: ");
+            string nombre = Console.ReadLine();
+
+            int cantidad = LeerEntero("Cantidad: ");
+            decimal precio = LeerDecimal("Precio: ");
+            DateTime Fecha = LeerFecha("Fecha vencimiento: ");
+
+            ProductoAlimenticio p = new ProductoAlimenticio(id, nombre, cantidad, precio, Fecha);
+            inventario.AgregarProducto(p);
+
+            Console.WriteLine("Producto alimenticio agregado correctamente.");
+        }
     }
 }
