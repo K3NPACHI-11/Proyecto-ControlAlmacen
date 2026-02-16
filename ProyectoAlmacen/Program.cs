@@ -57,5 +57,44 @@ namespace ProyectoAlmacen
             Console.WriteLine("4. Eliminar Producto");
             Console.WriteLine("5. Salir");
         }
+
+        static int LeerEntero(string mensaje)
+        {
+            int valor;
+            Console.WriteLine(mensaje);
+
+            while (!int.TryParse(Console.ReadLine(), out valor))
+            {
+                Console.Write("Valor inválido. Intente de nuevo");
+            }
+
+            return valor;
+        }
+
+        static decimal LeerDecimal(string mensaje)
+        {
+            decimal valor;
+            Console.Write(mensaje);
+
+            while (!decimal.TryParse(Console.ReadLine(), out valor))
+            {
+                Console.Write("Número inválido. Intente de nuevo");
+            }
+
+            return valor;
+        }
+
+        static DateTime LeerFecha(string mensaje)
+        {
+            DateTime fecha;
+            Console.Write(mensaje);
+
+            while (!DateTime.TryParse(Console.ReadLine(), out fecha))
+            {
+                Console.Write("Fecha inválido. Intente de nuevo");
+            }
+
+            return fecha;
+        }
     }
 }
